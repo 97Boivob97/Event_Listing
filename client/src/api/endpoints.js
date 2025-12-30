@@ -1,13 +1,10 @@
 export const ENDPOINTS = {
   // AUTH
-  LOGIN: "/login",
-  REGISTER: "/registration",
+  LOGIN: "/api/login",
+  REGISTER: "/api/registration",
 
   // EVENTS
-  EVENTS: "/events",
-  EVENT_BY_ID: (id) => `/events/${id}`,
-
-  ME: null,
-  MY_EVENTS: null,
+  EVENTS: "/api/events",
+  EVENT_BY_ID: (id) => `/api/events/${id}`,
 };
 
