@@ -4,15 +4,12 @@ dotenv.config();
 import app from "./app.js";
 import connectDB from "./src/config/db.js";
 
-const server = async () => {
-  try {
+let isConnected = false;
+
+export default async function handler(request, response) {
+  if (!isConnected) {
     await connectDB();
-    console.log("MongoDB connected");
-  } catch (error) {
-    console.error(error);
+    isConnected = true;
   }
-};
-
-server();
-
-export default app; 
+  return app(request, response);
+}
