@@ -14,7 +14,10 @@ const limiter = rateLimit({
 
 app.use(express.json());
 app.use(limiter);
-app.use(cors());
+app.use(cors({
+  origin: "https://event-listing-fawo.vercel.app",
+  credentials: true,
+}));
 app.use(hpp());
 
 app.use("/api",router);
